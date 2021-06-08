@@ -100,3 +100,4 @@ http://localhost:8001
 | Name | Role | Email |
 | ------------ | ------------ | ------------ |
 |Rio Bastian|Backend Dev|rio.bastian@metranet.co.id|
+|||altanovela@gmail.com|
