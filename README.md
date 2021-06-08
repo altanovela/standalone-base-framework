@@ -21,6 +21,7 @@ Standalone Base Framework is built as as Base Framework for others compatible pr
 ## Feature
 - Login
 - Account Management
+- Edit Password and Profile Picture
 - ...
 
 ## Architecture
