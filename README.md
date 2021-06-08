@@ -2,7 +2,7 @@
 
 [![Java](https://img.shields.io/badge/Java-1.8.0-red.svg?style=plastic)](https://www.oracle.com/java/technologies/)
 [![Maven](https://img.shields.io/badge/Maven-3.5.3-purple.svg?style=plastic)](https://maven.apache.org)
-[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.3.2.RELEASE-green.svg?style=plastic)](https://spring.io/projects/spring-boot)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-2.0.4.RELEASE-green.svg?style=plastic)](https://spring.io/projects/spring-boot)
 [![Hibernate](https://img.shields.io/badge/Hibernate-5.2.17-yellowgreen.svg?style=plastic)](https://hibernate.org)
 [![Thymeleaf](https://img.shields.io/badge/Thymeleaf-3.50-green.svg?style=plastic)](https://www.thymeleaf.org/doc/articles/springmvcaccessdata.html)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-3.3.5-blueviolet.svg?style=plastic)](https://getbootstrap.com/docs/3.3/)
@@ -24,8 +24,8 @@ Standalone Base Framework is built as as Base Framework for others compatible pr
 - ...
 
 ## Architecture
-<img src="https://gitlab.playcourt.id/riobastian/base-framework/-/raw/master/res/base-framework-arch.jpg" width="80%"/>
-<img src="https://gitlab.playcourt.id/riobastian/base-framework/-/raw/master/res/preview-login.jpg" width="48%"/>&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://gitlab.playcourt.id/riobastian/base-framework/-/raw/master/res/preview-homepage.jpg" width="48%"/>
+<img src="https://raw.githubusercontent.com/altanovela/standalone-baseframework/master/res/base-framework-arch.jpg" width="80%"/>
+<img src="https://raw.githubusercontent.com/altanovela/standalone-baseframework/master/res/preview-login.jpg" width="48%"/>&nbsp;&nbsp;&nbsp;&nbsp;<img src="https://raw.githubusercontent.com/altanovela/standalone-baseframework/master/res/preview-homepage.jpg" width="48%"/>
 
 ## Build & Deploy
 
@@ -52,8 +52,8 @@ Login Credential :
 Maven Run :
 -----------
 1. Prepare Project
-   $ git clone ssh://git@gitlab.playcourt.id:31022/riobastian/base-framework.git
-   $ cd base-framework/
+   $ git clone https://github.com/altanovela/standalone-base-framework.git
+   $ cd standalone-base-framework/
 
 2. Build and Package the Project
    $ mvn -e clean spring-boot:run -Dactive.profile=local
@@ -61,15 +61,15 @@ Maven Run :
 Docker :
 --------
 1. Prepare Project
-   $ git clone ssh://git@gitlab.playcourt.id:31022/riobastian/base-framework.git
-   $ cd base-framework/
+   $ git clone https://github.com/altanovela/standalone-base-framework.git
+   $ cd standalone-base-framework/
 
 2. Build and Package the Project
    $ mvn -e clean package
 
 3. Rebuild Docker Image
-   $ docker image rm base-framework:1.0
-   $ docker build --tag base-framework:1.0 .
+   $ docker image rm standalone-base-framework:1.0
+   $ docker build --tag standalone-base-framework:1.0 .
 
 4. Rebuild Container and Run
    $ docker-compose -f deploy/docker-compose-local.yml down
@@ -82,7 +82,6 @@ http://localhost:8001
 ```
 
 ## Package Structure
-#### Data Flow
 **Controller > Service > Repository**
 
 | Package Name | Usage  |
