@@ -20,8 +20,8 @@
             <div class="login-content">
                 <div class="login-box">
                     <h1 class="big-title">Selamat Datang</h1>
-                    <p class="normal-text">silahkan login untuk masuk ke homepage</p>
-                    <div class="space">
+                    <p class="normal-text"></p>
+                    <div>
                         <!-- Message :: Logout Successful Message -->
                         <div th:if="${param.logout}" class="alert alert-info alert-dismissable">
                             <p>
@@ -71,9 +71,7 @@
                 </div>
             </div>
             <div class="login-footer">
-                <div class="login-footer-container">
-                    Powered by <img th:src="@{'/assets/images/logo/logo-metranet.svg'}" style="width:100px; margin-left: 10px;" alt="Metranet"/>
-                </div>
+                <div class="login-footer-container">Powered by Humanity</div>
             </div>
         </div>
     </body>

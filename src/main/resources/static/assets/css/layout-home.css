@@ -66,36 +66,46 @@ table .td2 {
 ul {
     list-style-type: none;
     margin: 0;
-      padding: 0;
-      background-color: #f1f1f1;
+    padding: 0;
+    background-color: #f1f1f1;
+}
+
+ul.dtr-details {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
 }
 
 li a {
-      display: block;
-      color: #000;
-      padding: 8px 16px;
-      text-decoration: none !important;
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none !important;
 }
 
 li a.active {
-      background-color: rgba(129, 211, 248, 0.8);
-      font-weight: bold;
+    background-color: rgba(129, 211, 248, 0.8);
+    font-weight: bold;
 }
 
 li a.selected {
-      background-color: rgba(2, 167, 240, 1);
+    color: #337ab7 !important;
 }
 
 li a:hover:not(.active) {
-      background-color: #555;
-      color: white;
+    background-color: #555;
+    color: white;
 }
 .navbar-link {
-    padding-top: 24px !important;
-    padding-bottom: 24px !important;
-    line-height: 32px !important;
+    padding-top: 25px !important;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
     background: #FFFFFF;
+}
+
+#submenu-1,#submenu-2,#submenu-3 li {
+    padding-left: 20px;
 }

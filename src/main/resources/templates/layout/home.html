@@ -63,9 +63,13 @@
             <ul class="nav navbar-nav side-nav">
                 <li sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_BUSINESS_USER')">
                     <a class="menu-parent" href="#" data-toggle="collapse" data-target="#submenu-3">Kelola Akun<i class="fa fa-fw fa-angle-down pull-right"></i></a>
-                    <ul id="submenu-3" class="collapse">
-                        <li sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_OPERATOR', 'ROLE_BUSINESS_USER')"><a href="/account/edit">Pengaturan</a></li>
-                        <li sec:authorize="hasAnyRole('ROLE_ADMIN')"><a href="/account/index">Daftar Akun</a></li>
+                    <ul id="submenu-3" th:class="${#strings.contains(#httpServletRequest.requestURI, '/account/')} ? 'collapsein' : 'collapse'">
+                        <li sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_OPERATOR', 'ROLE_BUSINESS_USER')">
+                            <a href="/account/edit" th:class="${#strings.contains(#httpServletRequest.requestURI, 'edit' )} ? 'selected'">Pengaturan</a>
+                        </li>
+                        <li sec:authorize="hasAnyRole('ROLE_ADMIN')">
+                            <a href="/account/index" th:class="${#strings.contains(#httpServletRequest.requestURI, 'index' )} ? 'selected'">Daftar Akun</a>
+                        </li>
                     </ul>
                 </li>
             </ul>
