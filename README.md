@@ -25,7 +25,7 @@ Standalone Base Framework is built as as Base Framework for others compatible pr
 - ...
 
 ## Architecture
-<img src="https://raw.githubusercontent.com/altanovela/standalone-baseframework/master/res/base-framework-arch.jpg" width="80%"/>
+<img src="https://raw.githubusercontent.com/altanovela/standalone-baseframework/master/res/base-framework-arch.png" width="80%"/>
 <img src="https://raw.githubusercontent.com/altanovela/standalone-baseframework/master/res/preview-login.jpg" width="60%"/></br>
 <img src="https://raw.githubusercontent.com/altanovela/standalone-baseframework/master/res/preview-homepage.jpg" width="60%"/><img src="https://raw.githubusercontent.com/altanovela/standalone-baseframework/master/res/preview-account-edit.jpg" width="60%"/>
 
