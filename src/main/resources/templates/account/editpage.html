@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    layout:decorator="layout/home">
+
+    <head>
+        <title>User Home</title>
+    </head>
+    <body>
+        <th:block layout:fragment="pagescript-top">
+            <link rel="stylesheet" th:href="@{/assets/css/account-mgt.css}" />
+        </th:block>
+        
+        <div layout:fragment="content">
+            <h2 class="semibig-title">Pengaturan Akun</h2>
+            <div class="padi-box">
+                <form id="formUpdatePass" class="form-horizontal" th:action="@{/account/updatepass}" th:object="${account}" method="post">
+                    <!-- Message :: Update Password Successful Message -->
+                    <div th:if="${param.okpass}" class="alert alert-info alert-dismissable w37">
+                        <p>
+                            <i class="icon fa fa-info"></i> <span th:text="#{update.account.pass.success}"></span>
+                        </p>
+                    </div>
+                    <!-- Message :: Update Password Fail -->
+                    <div th:if="${param.errpass1}" class="alert alert-danger alert-dismissable w37">
+                        <p>
+                            <i class="icon fa fa-ban"></i> <span th:text="#{update.account.pass.failed.1}"></span>
+                        </p>
+                    </div>
+                    <div th:if="${param.errpass2}" class="alert alert-danger alert-dismissable w37">
+                        <p>
+                            <i class="icon fa fa-ban"></i> <span th:text="#{update.account.pass.failed.2}"></span>
+                        </p>
+                    </div>
+                    <div th:if="${param.errpass3}" class="alert alert-danger alert-dismissable w37">
+                        <p>
+                            <i class="icon fa fa-ban"></i> <span th:text="#{update.account.pass.failed.3}"></span>
+                        </p>
+                    </div>
+                    
+                    <!-- Message :: Update Image Successful Message -->
+                    <div th:if="${param.okimage}" class="alert alert-info alert-dismissable w37">
+                        <p>
+                            <i class="icon fa fa-info"></i> <span th:text="#{update.account.image.success}"></span>
+                        </p>
+                    </div>
+                    <!-- Message :: Update Image Fail -->
+                    <div th:if="${param.errimage1}" class="alert alert-danger alert-dismissable w37">
+                        <p>
+                            <i class="icon fa fa-ban"></i> <span th:text="#{update.account.image.failed.1}"></span>
+                        </p>
+                    </div>
+                    <!-- Message :: Update Image Fail, Size to Large -->
+                    <div th:if="${param.errimage2}" class="alert alert-danger alert-dismissable w37">
+                        <p>
+                            <i class="icon fa fa-ban"></i> <span th:text="#{update.account.image.failed.2}"></span>
+                        </p>
+                    </div>
+                    
+                    <div class="w600">
+                        <div class="form-group wrap-input" data="inusername">
+                            <label class="control-label label-input">Username : </label>
+                            <div class="text-input">
+                                <input class="form-control" placeholder="Enter username" th:field="*{username}" disabled>
+                            </div>
+                        </div>
+                        <div class="hide-err err-username">
+                            <label class="control-label label-input">&nbsp;</label>
+                            <div class="input-group text-input">
+                                <div class="help-block with-errors red"></div>
+                            </div>
+                        </div>
+                        <div class="form-group wrap-input" data="inemail">
+                            <label class="control-label label-input">Email : </label>
+                            <label class="control-label text-input"><span th:text="${T(id.altanovela.util.TextUtil).hashEmail(account.email)}"></span></label>
+                        </div>
+                        <span class="editpass0">
+                            <div class="form-group wrap-input"> 
+                                <label class="control-label label-input">Password :</label>
+                                <div class="text-input">
+                                    <button type="button" class="btn btn-primary">Ganti Password</button>
+                                </div>
+                            </div>
+                        </span>
+                        <span class="editpass1">
+                            <div class="form-group wrap-input" data="inpassword0">
+                                <label class="control-label label-input">Password Lama : <i class="red">*</i></label>
+                                <div class="input-group text-input" id="show_hide_password0">
+                                    <input type="password" class="form-control" placeholder="Enter password" th:field="*{password0}">
+                                    <div class="input-group-addon">
+                                        <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hide-err err-password0">
+                                <label class="control-label label-input">&nbsp;</label>
+                                <div class="input-group text-input">
+                                    <div class="help-block with-errors red"></div>
+                                </div>
+                            </div>
+                            <div class="form-group wrap-input" data="inpassword1">
+                                <label class="control-label label-input">Password Baru : <i class="red">*</i></label>
+                                <div class="input-group text-input" id="show_hide_password1">
+                                    <input type="password" class="form-control" placeholder="Enter password" th:field="*{password1}">
+                                    <div class="input-group-addon">
+                                        <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hide-err err-password1">
+                                <label class="control-label label-input">&nbsp;</label>
+                                <div class="input-group text-input">
+                                    <div class="help-block with-errors red"></div>
+                                </div>
+                            </div>
+                            <div class="form-group wrap-input" data="inpassword2">
+                                <label class="control-label label-input">Konfirmasi Password Baru : <i class="red">*</i></label>
+                                <div class="input-group text-input" id="show_hide_password2">
+                                    <input type="password" class="form-control" placeholder="Confirm password" th:field="*{password2}">
+                                    <div class="input-group-addon">
+                                        <a href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="hide-err err-password2">
+                                <label class="control-label label-input">&nbsp;</label>
+                                <div class="input-group text-input">
+                                    <div class="help-block with-errors red"></div>
+                                </div>
+                            </div>
+                            <div class="form-group wrap-input"> 
+                                <label class="control-label label-input">&nbsp;</label>
+                                <div class="text-input">
+                                    <button type="button" class="btn btn-primary bsimpan">Simpan</button>
+                                    <button type="button" class="btn btn-warning bbatal">Batal</button>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </form>
+                <form id="formUpdateImage" class="form-horizontal" th:action="@{/account/updateimage}" enctype="multipart/form-data" method="post">
+                    <div>
+                        <div class="container" data="inprofilimage">
+                            <div class="col-md-6 upload-col">
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-btn">
+                                            <span class="btn btn-default btn-file">
+                                                Browse… <input type="file" name="file" id="imgInp" accept="image/jpg, image/jpeg, image/png">
+                                            </span>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Upload foto profil" readonly>
+                                    </div>
+                                    <img id='img-upload' th:src="${@environment.getProperty('static.domain')}+${account.image}" onerror="this.onerror=null;this.src='/assets/images/img-avatar.png';"/>
+                                    <div class="gubah">
+                                        <button type="button" class="btn btn-primary bubah">Ubah Gambar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <th:block layout:fragment="pagescript-bottom">
+            <script th:src="@{'/assets/js/password.js'}"></script>
+            <script th:src="@{'/assets/js/account-mgt.js'}"></script>
+            <script th:src="@{'/assets/js/image-upload.js'}"></script>
+            <script th:src="@{'/assets/js/lib/datatable.min.js'}"></script>
+            <script th:src="@{'/assets/js/lib/datatable.bootstrap.min.js'}"></script>
+        </th:block>
+    </body>
+</html>

@@ -1,0 +1,115 @@
+html {
+    height: 100%;
+}
+.login-header {
+    width: 100%;
+    background: white;
+    padding: 16px;
+    z-index: 1;
+    position: fixed;
+}
+.login-header img {
+    margin: 0 auto;
+    display: block;
+}
+.login-header span {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+.login-content {
+    height: 100%;
+    background-color: #EA3535;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    padding-top: 80px;
+    padding-bottom: 70px;
+}
+.login-footer {
+    width: 100%;
+    background: white;
+    padding: 20px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+}
+.login-footer-container {
+    width: 208px;
+    margin: 0 auto;
+}
+.login-box {
+    position: absolute;
+    width: 360px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 50px 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.big-title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px !important;
+    line-height: 32px;
+    color: #474747;
+}
+.normal-text {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(71, 71, 71, 0.87);
+}
+.text-label {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: rgba(71, 71, 71, 0.87);
+    margin-bottom: 10px;
+}
+.form-control {
+    background: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(71, 71, 71, 0.87);
+    margin-top: 8px;
+    margin-bottom: 30px;
+}
+.space {
+    min-height: 50px;
+}
+.btn-padi {
+    background: #F2994A;
+    border-radius: 10px;
+    padding: 15px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+    border: solid 1px #F2994A;
+}
+.login-header {
+    width: 100%;
+    background: white;
+    padding: 16px;
+}
+.login-header img {
+    margin: 0 auto;
+    display: block;
+}

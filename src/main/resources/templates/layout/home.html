@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+        
+        <title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE">Web Application Title</title>
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
+        <link rel="icon" th:href="@{'/assets/images/padi-umkm-logo.png'}" />
+        
+        <!-- CSS Library -->
+        <link rel="stylesheet" th:href="@{/assets/lib/font-awesome-4.5.0/css/font-awesome.min.css}" />
+        <link rel="stylesheet" th:href="@{/assets/lib/bootstrap/css/bootstrap.min.css}" />
+        <link rel="stylesheet" th:href="@{/assets/css/lib/snackbar.css}" />
+        
+        <!-- CSS Local -->
+        <link rel="stylesheet" th:href="@{/assets/css/styles.css}" />
+        <link rel="stylesheet" th:href="@{/assets/css/layout-home.css}" />
+    </head>
+    
+    <body style="background: #F7F8FC;">
+        <script th:src="@{'/assets/js/lib/jquery-3.5.1.min.js'}"></script>
+        <script th:src="@{'/assets/lib/bootstrap/js/bootstrap.min.js'}"></script>
+        
+        <th:block layout:fragment="pagescript-top">
+            <!-- Page Styling or Script -->
+        </th:block>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <ul class="nav navbar-nav">
+                      <li>
+                          <a class="navbar-link" href="/">
+                            <span style="padding-top:10px">Homepage Application</span>
+                          </a>
+                    </li>
+                </ul>
+              </div>
+    
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                      <li>
+                          <a href="#">
+                            <img class="avatar" th:if="${#authentication.principal.image}" th:src="${@environment.getProperty('static.domain')}+${#authentication.principal.image}" onerror="this.onerror=null;this.src='/assets/images/img-avatar.png';" /> <span>[[${#authentication.principal.username}]] | [[${#authentication.principal.authorities}]]</span>
+                          </a>
+                    </li>
+                    <li>
+                        <a th:href="@{/logout}">
+                            <img class="logout" th:src="@{'/assets/images/icon/logout.svg'}" alt="Logout">
+                        </a>
+                    </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+    
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav side-nav">
+                <li sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_BUSINESS_USER')">
+                    <a class="menu-parent" href="#" data-toggle="collapse" data-target="#submenu-3">Kelola Akun<i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                    <ul id="submenu-3" class="collapse">
+                        <li sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_OPERATOR', 'ROLE_BUSINESS_USER')"><a href="/account/edit">Pengaturan</a></li>
+                        <li sec:authorize="hasAnyRole('ROLE_ADMIN')"><a href="/account/index">Daftar Akun</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div layout:fragment="content" class="padi-container">
+            <!-- Your Page Content Here -->
+        </div>
+        <div class="padi-footer">
+            <div class="padi-footer-container">
+                Powered by Humanity
+            </div>
+        </div>
+        <th:block layout:fragment="pagescript-bottom">
+            <!-- Page Styling or Script -->
+        </th:block>
+    </body>
+
+</html>

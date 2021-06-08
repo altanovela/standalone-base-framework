@@ -1,0 +1,101 @@
+.header {
+    border-collapse: collapse; 
+    margin: 0 auto;  
+    padding: 0px;
+    table-layout: fixed;
+    min-width: 100%;
+}
+
+table .th1 {
+    text-align: center;
+    border-right: 1px solid #000000;
+    font-weight:bold;
+    text-align:center;
+    padding:50px;
+    width:15%;
+}
+
+table .th2 {
+    border-left: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    padding-left: 20px;
+    font-weight: normal;
+}
+
+table .buff {
+    padding-left: 30px;
+}
+
+table .th2 span {
+    padding-left: 20px;
+}
+
+table .th3 {
+    border-bottom: 1px solid #000000;
+    text-align: right;
+    padding-right: 40px;
+    font-weight: normal;
+}
+
+table .th3 .sp1 {
+    padding-right: 10px;
+}
+
+table .th3 .sp2 img {
+    padding-bottom: 2px;
+}
+
+table .td1 {
+    border-top: 1px solid #000000;
+    border-right: 1px solid #000000;
+    vertical-align: text-top;
+    background-color: #f1f1f1;
+}
+
+table .td2 {
+    padding-left: 30px;
+    vertical-align: text-top;
+}
+
+.pict {
+    border-radius: 50%;
+    width:50px;
+    height:50px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+      padding: 0;
+      background-color: #f1f1f1;
+}
+
+li a {
+      display: block;
+      color: #000;
+      padding: 8px 16px;
+      text-decoration: none !important;
+}
+
+li a.active {
+      background-color: rgba(129, 211, 248, 0.8);
+      font-weight: bold;
+}
+
+li a.selected {
+      background-color: rgba(2, 167, 240, 1);
+}
+
+li a:hover:not(.active) {
+      background-color: #555;
+      color: white;
+}
+.navbar-link {
+    padding-top: 24px !important;
+    padding-bottom: 24px !important;
+    line-height: 32px !important;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    background: #FFFFFF;
+}

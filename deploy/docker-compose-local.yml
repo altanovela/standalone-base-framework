@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+  app_framework-LOCAL:
+    container_name: app_framework-LOCAL
+    image: base-framework:1.0
+    ports:
+      - 8001:8001
+    environment:
+      - APP_PROFILE=local
+    volumes:
+      - /Users/rio.bastian/Documents/app/workspace/metrasrc:/home/vmuser/metrasrc

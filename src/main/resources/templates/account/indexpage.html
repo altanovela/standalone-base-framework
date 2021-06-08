@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    layout:decorator="layout/home">
+
+    <head>
+        <title>User Home</title>
+    </head>
+    <body>
+        <th:block layout:fragment="pagescript-top">
+            <link rel="stylesheet" th:href="@{/assets/css/account-mgt.css}" />
+            <link rel="stylesheet" th:href="@{/assets/css/lib/datatable.bootstrap.min.css}" />
+        </th:block>
+        
+        <div layout:fragment="content">
+            <h2 class="semibig-title">Daftar Akun</h2>
+            <div class="padi-box">
+                <form class="form-horizontal">
+                    <div class="w500">
+                        <div class="form-group wrap-input" data="inusername">
+                            <label class="control-label label-input">Username : <i class="red">*</i></label>
+                            <div class="text-input">
+                                <input class="form-control" placeholder="Enter username" >
+                            </div>
+                        </div>
+                        <div class="form-group wrap-input" data="inemail">
+                            <label class="control-label label-input">Email : <i class="red">*</i></label>
+                            <div class="text-input">
+                                <input type="email" class="form-control" placeholder="Enter email">
+                            </div>
+                        </div>
+                        <div class="form-group wrap-input" data="inrole">
+                            <label class="control-label label-input">Role : <i class="red">*</i></label>
+                            <div class="text-input">
+                                  <select class="form-control">
+                                    <option value="">Pilih ...</option>
+                                    <option th:each="row:${roleList}" th:value="${row.id}" th:text="${row.namelabel}"></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group wrap-input"> 
+                            <label class="control-label label-input">&nbsp;</label>       
+                              <div class="text-input">
+                                <button type="button" class="btn btn-primary bc">Cari</button>
+                                <button type="button" class="btn btn-default bb">Bersihkan</button>
+                                <button type="button" class="btn btn-warning bt" onclick="location.href='/account/add';">Tambah Akun</button>
+                              </div>
+                        </div>
+                    </div>
+                </form>
+                <table id="accountList" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            
+            <!-- Inactivate user confirmation -->
+            <input type="hidden" id="userwrap"></input>
+            <div class="modal fade mm" id="confirmDelete" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                <img th:src="@{'/assets/images/icon/delete-icon.svg'}" style="width:25px"/>
+                            </button>
+                            <h4 class="modal-title"></h4>
+                        </div>
+                        <div class="modal-body">
+                            <p></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-padi btn-padi-outline btn-padi-half" id="confirm">Ya</button>
+                            <button type="button" class="btn btn-padi btn-padi-half" data-dismiss="modal">Tidak</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <th:block layout:fragment="pagescript-bottom">
+            <script th:src="@{'/assets/js/password.js'}"></script>
+            <script th:src="@{'/assets/js/account-mgt.js'}"></script>
+            <script th:src="@{'/assets/js/image-upload.js'}"></script>
+            <script th:src="@{'/assets/js/lib/datatable.min.js'}"></script>
+            <script th:src="@{'/assets/js/lib/datatable.bootstrap.min.js'}"></script>
+        </th:block>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    layout:decorator="layout/home">
+    
+    <head>
+        <title>AccessDenied</title>
+        <style>
+            .red {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div layout:fragment="bradcrumb">
+            <h5><u>Home</u></h5>
+        </div>
+        <div layout:fragment="content">
+            <div class="padi-box">
+                <p class="red">You are not authorized to view this page !!</p>
+            </div>
+        </div>
+    </body>
+</html>

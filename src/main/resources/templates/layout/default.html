@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+        
+        <title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE">Web Application Title</title>
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
+        <link rel="icon" th:href="@{'/assets/images/padi-umkm-logo.png'}" />
+        
+        <!-- CSS Library -->
+        <link rel="stylesheet" th:href="@{/assets/lib/bootstrap/css/bootstrap.min.css}" />
+        <link rel="stylesheet" th:href="@{/assets/lib/font-awesome-4.5.0/css/font-awesome.min.css}" />
+        
+        <!-- CSS Local -->
+        <link rel="stylesheet" th:href="@{/assets/css/styles.css}" />
+    </head>
+    
+    <body>
+        <th:block layout:fragment="pagescript-top">
+            <!-- Your Page Script Here -->
+        </th:block>
+        
+        <div layout:fragment="content">
+            <!-- Your Page Content Here -->
+        </div>
+    
+        <script th:src="@{'/assets/js/lib/jquery-3.5.1.min.js'}"></script>
+        <script th:src="@{'/assets/lib/bootstrap/js/bootstrap.min.js'}"></script>
+    </body>
+
+</html>

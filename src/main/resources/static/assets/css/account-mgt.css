@@ -1,0 +1,106 @@
+.gubah {
+	padding-top: 20px;	
+}
+
+.mm {
+	margin-top: 10%;
+}
+
+.editpass1 {
+	display: none;
+}
+
+.w37 {
+	width: 37%;
+	padding-top: 8px;
+}
+
+.w500 {
+	width: 500px;
+	float: left;
+}
+
+.w600 {
+	width: 600px;
+	float: left;
+}
+
+.wrap-input {
+	display: inline;
+	margin: 0px;
+}
+
+.label-input {
+	text-align: left !important;
+	font-weight: normal;
+	width: 30%;
+}
+
+.text-input {
+	text-align: left !important;
+	font-weight: normal;
+	width: 70%;
+	float: right;
+	padding-left:15px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#img-upload{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+
+.upload-col {
+	padding-top: 20px;
+	padding-left: 50px;
+	text-align: center;
+}
+
+.red {
+	color: #a94442;
+}
+
+.hide-err {
+	display: none;
+}
+
+.show-err {
+	display: initial;
+}
+
+.show-err:after {
+	display: table;
+   	content: " ";
+}
+
+.bt {
+	margin-left: 10px;
+}
+
+.dtt {
+	margin-bottom: 100px;
+	margin-top: 30px;
+	width: 1123px;
+}

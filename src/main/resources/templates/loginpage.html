@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    layout:decorator="layout/default">
+    
+    <head>
+        <title>Log in</title>
+    </head>
+    
+    <body style="height: 100%;">
+        <th:block layout:fragment="pagescript-top">
+            <link rel="stylesheet" th:href="@{/assets/css/page-login.css}" />
+        </th:block>
+        <div layout:fragment="content" style="height: 100%;">
+            <div class="login-header">
+                <span>Web Application</span>
+            </div>
+            <div class="login-content">
+                <div class="login-box">
+                    <h1 class="big-title">Selamat Datang</h1>
+                    <p class="normal-text">silahkan login untuk masuk ke homepage</p>
+                    <div class="space">
+                        <!-- Message :: Logout Successful Message -->
+                        <div th:if="${param.logout}" class="alert alert-info alert-dismissable">
+                            <p>
+                                <i class="icon fa fa-info"></i> <span th:text="#{info.logout_success}"></span>
+                            </p>
+                        </div>
+                        <!-- Message :: Login Failed -->
+                        <div th:if="${param.error}" class="alert alert-danger alert-dismissable">
+                            <p>
+                                <i class="icon fa fa-ban"></i> <span th:text="#{error.login_failed}"></span>
+                            </p>
+                        </div>
+                        <!-- Message :: Login Failed User Not Found -->
+                        <div th:if="${param.errornotfound}" class="alert alert-danger alert-dismissable">
+                            <p>
+                                <i class="icon fa fa-ban"></i> <span th:text="#{error.login_failed.1}"></span>
+                            </p>
+                        </div>
+                        <!-- Message :: Login Failed User Not Active -->
+                        <div th:if="${param.errornotactive}" class="alert alert-danger alert-dismissable">
+                            <p>
+                                <i class="icon fa fa-ban"></i> <span th:text="#{error.login_failed.2}"></span>
+                            </p>
+                        </div>
+                    </div>
+    
+                    <form action="home" th:action="@{/login}" method="post">
+                        <div class="form-group has-feedback">
+                            <span class="text-label">Email / Username</span>
+                            <input type="text" class="form-control" name="username"
+                                placeholder="Username / Email" /> <span
+                                class="form-control-feedback"></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <span class="text-label">Password</span>
+                            <input type="password" class="form-control" name="password"
+                                placeholder="Password" /> <span
+                                class="form-control-feedback"></span>
+                        </div>
+                        <div>
+                            <div>
+                                <button type="submit" class="btn btn-primary btn-block btn-padi"
+                                    th:text="#{label.login}">Login</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="login-footer">
+                <div class="login-footer-container">
+                    Powered by <img th:src="@{'/assets/images/logo/logo-metranet.svg'}" style="width:100px; margin-left: 10px;" alt="Metranet"/>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
